@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexican Train Scoreboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mexican Train Scoreboard</h1>
+        <button id="new-game-btn">New Game</button>
+    </header>
+    <main>
+        <section id="player-setup" class="card">
+            <h2>Add Players</h2>
+            <input type="text" id="player-name" placeholder="Enter name...">
+            <button id="add-player-btn">Add</button>
+            <ul id="player-list"></ul>
+            <button id="start-game-btn" disabled>Start Match</button>
+        </section>
+        <section id="score-table-container" class="hidden">
+        </section>
+        <section id="vision-scanner" class="hidden">
+            <h2>Scan Dominoes</h2>
+            <video id="camera-feed" autoplay playsinline></video>
+            <button id="capture-btn">Count Pips</button>
+            <p id="scan-result">Detected Score: 0</p>
+        </section>
+    </main>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
