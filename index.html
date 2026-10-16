@@ -183,6 +183,8 @@
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 
   let cfg = { key:'', model:DEFAULT_MODEL, dblBlank:0, ...load('mt.cfg', {}) };
+  // One-tap setup link: .../#key=YOUR_KEY saves the key on this device, then wipes it from the address bar.
+  (() => { const m = location.hash.match(/key=([^&]+)/); if (m) { cfg.key = decodeURIComponent(m[1]); save('mt.cfg', cfg); history.replaceState(null, '', location.pathname + location.search); } })();
   let roster = load('mt.roster', ['Victor', 'Player 2', 'Player 3', 'Player 4']);
   let g = load('mt.game', null); // {players:[], top:12, rounds:[[scores...]], }
 
